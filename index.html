@@ -13,10 +13,10 @@
     <div class="container fluid p-5  text-center d-flex justify-content-center align-items-center">
         <div id="app">
             <button class="my-4 btn btn-primary" @click="getEmail">Click me</button>
-            <div class="spinner-border text-primary mx-4" role="status" v-show="isLoaded">
+            <div class="spinner-border text-primary mx-4" role="status" :class="(isLoaded ? 'd-block' : 'd-none')">
             </div>
             
-            <ul class="fw-bold fs-3" v-for="element in emailArray" v-show="emailArray.length === 10">
+            <ul class="fw-bold fs-3" v-for="element in emailArray" v-show="!isLoaded">
                 <li>{{element}}</li>
             </ul>
         </div>
